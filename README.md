@@ -121,7 +121,7 @@ The Jupyter Notebook includes:
 
 The project requires the following Python libraries:
 
-- **pandas** → Data manipulation and analysis  
+- '**pandas**'  Data manipulation and analysis  
 - **numpy** → Numerical operations  
 - **plotly** → Interactive data visualizations  
 - **streamlit** → Web application framework  

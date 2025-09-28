@@ -28,7 +28,8 @@ The chatbot previews your table, runs analysis, and uses **LLM reasoning** to pr
 
 ## 📷 Visual Demo
 
-![Chatbot Screenshot](assets/chatbot_screenshot.png)
+![Chatbot_rag Screenshot](assets\RAG_IMAGE.png)
+![Chatbot_table Screenshot](assets\table_image.png)
 
 ---
 
@@ -73,9 +74,11 @@ The demo uses the table **`amazon_review`** containing Amazon product reviews.
 | `review_content`    | Full review text (used for **sentiment analysis**) |
 | `img_link`          | Link to product image |
 | `product_link`      | Link to product page |
-| `Primary category`  | Extracted top-level product category |
-| `sentiment_score`   | Numerical sentiment score (from VADER) |
-| `sentiment_label`   | Label derived from sentiment score (`positive`, `negative`, `neutral`) |
+| `+Primary category`  | Extracted top-level product category |
+| `+sentiment_score`   | Numerical sentiment score (from VADER) |
+| `+sentiment_label`   | Label derived from sentiment score (`positive`, `negative`, `neutral`) |
+
+**" + " is new column**
 
 ---
 

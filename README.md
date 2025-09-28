@@ -136,6 +136,7 @@ Make sure to download the **VADER lexicon** before running sentiment analysis:
 ```python
 import nltk
 nltk.download('vader_lexicon')
+```
 
 ---
 

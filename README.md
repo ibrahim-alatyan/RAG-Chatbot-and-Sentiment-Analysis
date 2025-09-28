@@ -51,7 +51,7 @@ The chatbot can:
 
 ## 📊 Data Source
 
-The chatbot connects with a **local SQLite database** (`amazon.db`) or an **uploaded Excel file**.  
+The chatbot connects with a **local SQLite database** (`amazon.db`) .  
 The demo uses the table **`amazon_review`** containing Amazon product reviews.
 
 ### Dataset Columns

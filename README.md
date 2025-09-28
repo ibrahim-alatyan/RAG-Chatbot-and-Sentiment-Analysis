@@ -156,7 +156,7 @@ nltk.download('vader_lexicon')
     ```bash
     GROQ_API_KEY=your_api_key_here
 
-4. Run the app:
+4. Run the app(**IN TERMINAL**):
     ```bash
     streamlit run src/chatbot.py
 

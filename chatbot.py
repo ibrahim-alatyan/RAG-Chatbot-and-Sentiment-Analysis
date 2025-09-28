@@ -8,6 +8,14 @@ import sqlite3
 st.set_page_config(page_title="Chatbot", page_icon="🤖")
 st.title("🤖 Chatbot")
 
+st.markdown("""
+<style>
+.stTabs [role="tablist"] {
+    justify-content: center;
+}
+</style>
+""", unsafe_allow_html=True)
+
 @st.cache_resource
 def get_conn():
     return sqlite3.connect("amazon.db", check_same_thread=False)
@@ -47,7 +55,7 @@ with chatbotTab:
             else:
                 st.chat_message("ai").write(msg)
 
-    st.markdown("<div style='min-height:50vh'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='min-height:40vh'></div>", unsafe_allow_html=True)
 
     # user input
     user_input = st.chat_input("Enter your message")
@@ -58,7 +66,7 @@ with chatbotTab:
 
         with chat_area:
             ai_box = st.chat_message("ai").empty()
-            
+
         reply_text = ""
 
         # build full chat history for model
@@ -66,6 +74,15 @@ with chatbotTab:
         for role, msg in ss.messages:
             role_mapped = "user" if role == "user" else "assistant"
             chat_messages.append({"role": role_mapped, "content": msg})
+
+
+        if "df_table" in ss and ss.df_table is not None and not ss.df_table.empty:
+            preview_csv = ss.df_table.head(3).to_csv(index=False)                  
+            chat_messages.append({                                                  
+                "role": "user",
+                "content": f"Here is a preview of my table (first 30 rows, CSV):\n{preview_csv}\nUse only this data to answer factual questions."
+            })  
+
         chat_messages.append({"role": "user", "content": user_input})
 
 
@@ -101,4 +118,6 @@ with tableTab:
     )
 
     df_sql = pd.read_sql_query(f"SELECT * FROM amazon_review;", conn)
-    st.dataframe(df_sql, use_container_width=True)  # or st.table(df_sql)
+    st.dataframe(df_sql, use_container_width=True) 
+
+    ss.df_table = df_sql #STORE TABLE IN SESSION

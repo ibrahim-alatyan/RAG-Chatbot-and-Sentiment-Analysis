@@ -121,14 +121,14 @@ The Jupyter Notebook includes:
 
 The project requires the following Python libraries:
 
-- `**pandas**`  Data manipulation and analysis  
-- `**numpy**`  Numerical operations  
-- `**plotly**` Interactive data visualizations  
-- `**streamlit**` Web application framework  
-- `**groq**` Groq API client for LLM integration  
-- `**nltk**` Natural Language Toolkit (used for Sentiment Analysis with VADER)  
-- `**sqlite3**` Lightweight relational database (built into Python, may require `sqlite3-binary` in some environments)  
-- `**python-dotenv**` Load environment variables from `.env` file  
+- `pandas` - Data manipulation and analysis  
+- `numpy` - Numerical operations  
+- `plotly` - Interactive data visualizations  
+- `streamlit` - Web application framework  
+- `groq` - Groq API client for LLM integration  
+- `nltk` - Natural Language Toolkit (used for Sentiment Analysis with VADER)  
+- `sqlite3` - Lightweight relational database (built into Python, may require `sqlite3-binary` in some environments)  
+- `python-dotenv` - Load environment variables from `.env` file  
 
 ### NLTK Resources
 Make sure to download the **VADER lexicon** before running sentiment analysis:

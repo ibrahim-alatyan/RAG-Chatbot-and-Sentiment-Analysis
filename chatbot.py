@@ -1,51 +1,75 @@
-import streamlit as st
-from huggingface_hub import InferenceClient
-import time
 import os
+import time
+import streamlit as st
+from groq import Groq
 
-st.set_page_config(page_title="Chatbot")
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except Exception:
+    pass
 
-ss = st.session_state #save session
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+if not GROQ_API_KEY:
+    raise RuntimeError("GROQ_API_KEY is not set. Put it in your environment or .env")
 
-HF_TOKEN = os.getenv("HF_TOKEN")
-MODEL_ID = "meta-llama/Llama-3.1-8B-Instruct"
+groq_client = Groq(api_key=GROQ_API_KEY)
 
-client = InferenceClient(model=MODEL_ID, token=HF_TOKEN)
+MODEL_ID = "groq/compound"
 
-#to store the chat
+st.set_page_config(page_title="Chatbot", page_icon="🤖")
+st.title("🤖 Chatbot")
+
+ss = st.session_state
+
+# to store chat
 if "messages" not in ss:
     ss.messages = []
 
-#to load the messages
-for role , msg in ss.messages:
+# display past messages
+for role, msg in ss.messages:
     if role == "user":
         st.chat_message("user").write(msg)
     else:
-        st.chat_message("AI").write(msg)
+        st.chat_message("ai").write(msg)
 
-#to save message and user send message
-user_input = st.chat_input("Enter your message:")
+# user input
+user_input = st.chat_input("Enter your message")
 if user_input:
     st.chat_message("user").write(user_input)
     ss.messages.append(("user", user_input))
 
-    #AI REPLAY
-    aiReplay = st.chat_message("AI").empty()
+    assistant_box = st.chat_message("ai").empty()
     reply_text = ""
 
-    # FOR MAKE IT WORD BY WORD (STREAMING)
-    REPLAY = client.chat_completion(
+    # build full chat history for model
+    chat_messages = [{"role": "system", "content": "You are a helpful assistant."}]
+    for role, msg in ss.messages:
+        role_mapped = "user" if role == "user" else "assistant"
+        chat_messages.append({"role": role_mapped, "content": msg})
+    chat_messages.append({"role": "user", "content": user_input})
+
+    genReply = groq_client.chat.completions.create(
         model=MODEL_ID,
-        messages=[{"role": "user", "content": user_input}],
+        messages=chat_messages,
+        temperature=1,
+        max_completion_tokens=1024,
+        top_p=1,
         stream=True,
-        max_tokens=128, # max tokens in one response
+        stop=None,
     )
 
-    # display word by word
-    for chunks in REPLAY:
-        chunk = chunks.choices[0].delta.get("content", "")
-        reply_text += chunk
-        aiReplay.write(reply_text)
-        time.sleep(0.02) #to make word gen slower
+    # to make ai replay message streaming (word by word)
+    for chunk in genReply:
+        ai_reply = ""
+        try:
+            ai_reply = chunk.choices[0].delta.content or ""
+        except Exception:
+            pass
 
-    ss.messages.append(("assistant", reply_text))
+        if ai_reply:
+            reply_text += ai_reply
+            assistant_box.write(reply_text)
+            time.sleep(0.01)
+
+    ss.messages.append(("ai", reply_text))

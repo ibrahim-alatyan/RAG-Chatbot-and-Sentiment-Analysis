@@ -5,8 +5,11 @@ from groq import Groq
 import pandas as pd
 import sqlite3
 
-st.set_page_config(page_title="Chatbot", page_icon="🤖")
-st.title("🤖 Chatbot")
+st.set_page_config(page_title="RAG Chatbot", page_icon="🤖")
+st.title("🤖 RAG Chatbot")
+
+st.subheader("HELLO! Im here to help you and answer you question about your table 🤖")
+
 
 st.markdown("""
 <style>
@@ -25,6 +28,7 @@ conn = get_conn()
 chatbotTab , tableTab = st.tabs(["chatbot","Table"])
 
 ss = st.session_state
+
 
 with chatbotTab:
     try:
@@ -77,7 +81,7 @@ with chatbotTab:
 
 
         if "df_table" in ss and ss.df_table is not None and not ss.df_table.empty:
-            preview_csv = ss.df_table.head(3).to_csv(index=False)                  
+            preview_csv = ss.df_table.head(3).to_csv(index=False) #I BUT 3 ROWS BECUSE I DONT HAVE TOKEN :)               
             chat_messages.append({                                                  
                 "role": "user",
                 "content": f"Here is a preview of my table (first 30 rows, CSV):\n{preview_csv}\nUse only this data to answer factual questions."

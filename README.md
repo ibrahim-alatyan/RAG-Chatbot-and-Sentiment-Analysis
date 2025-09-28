@@ -145,8 +145,8 @@ nltk.download('vader_lexicon')
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ibrahim-alatyan/W3_TASK
-   cd W3_TASK
+   git clone https://github.com/ibrahim-alatyan/RAG-Chatbot-with-Table-QA-Sentiment-Analysis.git
+   cd RAG-Chatbot-and-Sentiment-Analysis
 
 2. Install the required libraries:
     ```bash

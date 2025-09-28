@@ -28,8 +28,8 @@ The chatbot previews your table, runs analysis, and uses **LLM reasoning** to pr
 
 ## 📷 Visual Demo
 
-![Chatbot_rag Screenshot](assets\RAG_IMAGE.png)
-![Chatbot_table Screenshot](assets\table_image.png)
+![Chatbot_rag Screenshot](assets/RAG_IMAGE.png)
+![Chatbot_table Screenshot](assets/table_image.png)
 
 ---
 

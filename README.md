@@ -35,7 +35,7 @@ The chatbot previews your table, runs analysis, and uses **LLM reasoning** to pr
 ### 🔹 more analysis and visulastion
 <summary>click here to see more analysis</summary>
 <details>
-### ⭐ Best & Worst Products
+#### ⭐ Best & Worst Products
 - **Top 10 Good Products**
   
   ![Top 10 Good Products](assets/10_goodProduct.png)
@@ -46,21 +46,21 @@ The chatbot previews your table, runs analysis, and uses **LLM reasoning** to pr
 
 ---
 
-### 📈 Category Insights
+#### 📈 Category Insights
 - **Average Sales by Category**
   
   ![Average Sales by Category](assets/avgSellsByCatarogy.png)
 
 ---
 
-### ⭐ Ratings
+#### ⭐ Ratings
 - **Max Rating and max Rating Count**
   
   ![Max Rating and Rating Count](assets/maxRating_andRatingCount.png)
 
 ---
 
-### 💰 Discounts
+#### 💰 Discounts
 - **Top 10 Discounts**
 
   ![Top 10 Discounts 2](assets/top10_discount2.png)

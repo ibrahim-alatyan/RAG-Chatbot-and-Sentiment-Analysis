@@ -32,8 +32,9 @@ The chatbot previews your table, runs analysis, and uses **LLM reasoning** to pr
 ![Chatbot_table Screenshot](assets/table_image.png)
 
 
-## 🔹 Key Visualizations
-
+### 🔹 more analysis and visulastion
+<summary>click here to see more analysis</summary>
+<details>
 ### ⭐ Best & Worst Products
 - **Top 10 Good Products**
   
@@ -67,6 +68,8 @@ The chatbot previews your table, runs analysis, and uses **LLM reasoning** to pr
   **Visual**
   
   ![Top 10 Discounts](assets/top10_discount.png)
+
+  </details>
 
 ---
 

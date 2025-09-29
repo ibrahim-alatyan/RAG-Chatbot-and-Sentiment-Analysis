@@ -49,14 +49,14 @@ The chatbot previews your table, runs analysis, and uses **LLM reasoning** to pr
 📈 Category Insights
 - **Average Sales by Category**
   
-  ![Average Sales by Category](assets/avgSellsByCatarogy.png)
+  ![Average Sales by Category](assets\avgSellsByCatargory.png)
 
 ---
 
 ⭐ Ratings
 - **Max Rating and max Rating Count**
   
-  ![Max Rating and Rating Count](assets\avgSellsByCatargory.png)
+  ![Max Rating and Rating Count](assets/maxRating_andRatingCount.png)
 
 ---
 

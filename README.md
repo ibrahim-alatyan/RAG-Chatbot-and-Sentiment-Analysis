@@ -33,8 +33,8 @@ The chatbot previews your table, runs analysis, and uses **LLM reasoning** to pr
 
 
 ### 🔹 more analysis and visulastion
-<summary>click here to see more analysis</summary>
 <details>
+<summary>click here to see more analysis</summary>
 ⭐ Best & Worst Products
 - **Top 10 Good Products**
   

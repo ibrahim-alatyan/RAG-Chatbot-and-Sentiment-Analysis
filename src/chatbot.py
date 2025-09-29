@@ -116,6 +116,7 @@ with chatbotTab:
         ss.messages.append(("ai", reply_text))
 
 with tableTab:
+    st.markdown("🤖 You can see table ,and sentiment analysis")
     tables = pd.read_sql_query(
         "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%';",
         conn

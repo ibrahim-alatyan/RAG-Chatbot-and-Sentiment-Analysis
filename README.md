@@ -55,6 +55,8 @@ The chatbot connects with a **local SQLite database** (`amazon.db`) .
 The demo uses the table **`amazon_review`** containing Amazon product reviews.
 
 ### Dataset Columns
+<details>
+<summary>click here to see all column</summary>
 
 | Column              | Description |
 |---------------------|-------------|
@@ -79,6 +81,8 @@ The demo uses the table **`amazon_review`** containing Amazon product reviews.
 | `+sentiment_label`   | Label derived from sentiment score (`positive`, `negative`, `neutral`) |
 
 **" + " is new column**
+
+</details>
 
 ---
 

@@ -56,7 +56,7 @@ The chatbot previews your table, runs analysis, and uses **LLM reasoning** to pr
 ⭐ Ratings
 - **Max Rating and max Rating Count**
   
-  ![Max Rating and Rating Count](assets/maxRating_andRatingCount.png)
+  ![Max Rating and Rating Count](assets\avgSellsByCatargory.png)
 
 ---
 

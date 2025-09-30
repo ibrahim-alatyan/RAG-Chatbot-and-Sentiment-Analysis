@@ -7,7 +7,7 @@
 ![NLTK](https://img.shields.io/badge/NLTK-Sentiment-orange?logo=python&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-An interactive **RAG Chatbot** built with **Groq API (OR GPT2 - bad resuilt)** and **Streamlit**, capable of answering user questions directly from an uploaded **SQLite/Excel dataset**, with integrated **Sentiment Analysis** on customer reviews (`review_content`).  
+An interactive **RAG Chatbot** built with **Groq API (OR GPT2 Local - bad resuilt)** and **Streamlit**, capable of answering user questions directly from an uploaded **SQLite/Excel dataset**, with integrated **Sentiment Analysis** on customer reviews (`review_content`).  
 The chatbot previews your table, runs analysis, and uses **LLM reasoning** to provide insights in real-time.
 
 ---

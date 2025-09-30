@@ -32,7 +32,7 @@ The chatbot previews your table, runs analysis, and uses **LLM reasoning** to pr
 ![Chatbot_table Screenshot](assets/table_image.png)
 
 
-### 🔹 more analysis and visulastion
+### more analysis and visulastion
 <details>
 <summary>click here to see more analysis</summary>
 ⭐ Best & Worst Products
